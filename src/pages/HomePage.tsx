@@ -1,16 +1,18 @@
-import React from 'react';
 import Header from '../components/Header';
-import RepositoriesCard from '../components/RepositoriesCard';
-import UsersCard from '../components/UsersCard';
-import logo from './logo.svg';
+import TrendingUsersSection from '../components/sections/TrendingUsersSection';
+import ActiveUsersSection from '../components/sections/ActiveUsersSection';
+import RepositoriesSection from '../components/sections/RepositoriesSection';
+import './HomePage.css'
 
 function HomePage() {
   return (
     <div className="HomePage">
         <Header/>
-        <UsersCard/>
-        <RepositoriesCard/>
-      
+        <div className="main_content">
+           <TrendingUsersSection/>
+           <ActiveUsersSection/>
+           <RepositoriesSection/>
+        </div>
     </div>
   );
 }

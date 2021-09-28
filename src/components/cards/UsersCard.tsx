@@ -1,4 +1,4 @@
-import { Avatar, Card, CardActionArea, Divider } from '@mui/material';
+import { Avatar, Card, Divider } from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
