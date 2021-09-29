@@ -1,8 +1,13 @@
 export default interface IUser {
     id: number;
-    name: string;
+    login: string;
     avatar_url: string;
-    followers: string;
+    followers: any;
     project: string;
+    url: string;
+    followers_url: string;
+    repos_url: string;
+    profile: any;
+    repos: any; 
   }
   

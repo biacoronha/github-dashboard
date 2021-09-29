@@ -1,8 +1,6 @@
-import { AppBar, Input, InputAdornment, TextField, Toolbar } from '@mui/material';
-import { Box, positions } from '@mui/system';
-import SearchIcon from "@material-ui/icons/Search";
+import { AppBar, Toolbar } from '@mui/material';
 import SearchBar from 'material-ui-search-bar';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Header.css';
 
 export default function Header() {

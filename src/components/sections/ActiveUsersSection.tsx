@@ -1,4 +1,3 @@
-import { Grid } from "@material-ui/core";
 import IUser from "../../helpers/IUser";
 import UseFetch from "../../helpers/UseFetch";
 import UsersCard from "../cards/UsersCard";
@@ -9,7 +8,8 @@ export default function ActiveUsersSection({activeUsers,setActiveUsers} : {activ
     const url = "https://api.github.com/search/users?q=created:>2021-06-28+sort:repositories+type:user&page=1&per_page=3"; 
 
     setActiveUsers(UseFetch(url));
-    console.log(activeUsers)
+    
+    //console.log(activeUsers)
 
     return (
         <div>
@@ -23,6 +23,7 @@ export default function ActiveUsersSection({activeUsers,setActiveUsers} : {activ
                 alignItems="flex-start"
             > */}
             {activeUsers?.map((user, i) => 
+                //fazer as requisições aqui?
                 <UsersCard user={user} key={i}/> )}
             {/* </Grid> */}
         </div>

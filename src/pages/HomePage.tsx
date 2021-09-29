@@ -3,7 +3,7 @@ import TrendingUsersSection from '../components/sections/TrendingUsersSection';
 import ActiveUsersSection from '../components/sections/ActiveUsersSection';
 import RepositoriesSection from '../components/sections/RepositoriesSection';
 import './HomePage.css'
-import { Suspense, useState } from 'react';
+import { useState } from 'react';
 import IUser from '../helpers/IUser';
 import IRepository from '../helpers/IRepository';
 

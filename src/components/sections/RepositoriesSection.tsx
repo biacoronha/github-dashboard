@@ -6,10 +6,9 @@ export default function RepositoriesSection({repositories,setRepositories} : {re
     //const query = "created:%3E2020-09-29+sort:stars+type:repositories&page=1&per_page=4"; 
     const url = "https://api.github.com/search/repositories?q=created:%3E2020-09-29+sort:stars+type:repositories&page=1&per_page=4"; 
 
-    setRepositories(UseFetch(url));
-    console.log(repositories)
+    const repos = UseFetch(url)
 
-
+    setRepositories(repos);
     return (
         <div>
             <h1>Top Repositories</h1>
