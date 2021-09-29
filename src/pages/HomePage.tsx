@@ -8,7 +8,7 @@ import IUser from '../data/IUser';
 import IRepository from '../data/IRepository';
 
 const defaultUsers:IUser[] = [];
-const defaultRepositories:IUser[] = [];
+const defaultRepositories:IRepository[] = [];
 
 export default function HomePage() {
   const [users, setUsers]: [IUser[], (users: IUser[]) => void] = useState(defaultUsers);

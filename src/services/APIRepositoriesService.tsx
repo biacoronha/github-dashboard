@@ -3,13 +3,14 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import IRepository from "../data/IRepository";
 
-function APIRepositoriesService({setRepositories}:{setRepositories:(repositories: IRepository[]) => void}) {
+function APIRepositoriesService(props: {setRepositories:(repositories: IRepository[]) => void, query:string}) {
+    const {setRepositories, query} = props;
     const [loading, setLoading]: [boolean, (loading: boolean) => void] = useState<boolean>(true);
     const [error, setError]: [string, (error: string) => void] = useState("");
 
     useEffect(() => {
     axios
-        .get<IUser[]>("https://jsonplaceholder.typicode.com/posts", {timeout : 6000})
+        .get<IRepository[]>("https://api.github.com/search/repositories?q="+query, {timeout : 6000})
         .then(response => {
         setRepositories(response.data);
         setLoading(false);

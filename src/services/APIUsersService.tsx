@@ -2,13 +2,14 @@ import IUser from "../data/IUser";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-function APIUsersService({setUsers}:{setUsers:(users: IUser[]) => void}) {
+function APIUsersService(props: {setUsers:(users: IUser[]) => void, query:string}) {
+    const {setUsers, query} = props;
     const [loading, setLoading]: [boolean, (loading: boolean) => void] = useState<boolean>(true);
     const [error, setError]: [string, (error: string) => void] = useState("");
 
     useEffect(() => {
     axios
-        .get<IUser[]>("https://jsonplaceholder.typicode.com/posts", {timeout : 6000})
+        .get<IUser[]>("https://api.github.com/search/users?q="+query, {timeout : 6000})
         .then(response => {
         setUsers(response.data);
         setLoading(false);

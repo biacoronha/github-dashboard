@@ -4,10 +4,11 @@ import UsersCard from "../cards/UsersCard";
 import './Sections.css'
 
 export default function ActiveUsersSection({users,setUsers} : {users:IUser[],setUsers:(users: IUser[]) => void}) {
+    const query = "created:>2021-06-28+sort:repositories+type:user&page=1&per_page=3"; 
     return (
         <div>
             <h1>Most Active Users</h1>
-            <APIUsersService setUsers={setUsers}/>
+            <APIUsersService setUsers={setUsers} query={query}/>
             <UsersCard users={users} />
         </div>
       );
