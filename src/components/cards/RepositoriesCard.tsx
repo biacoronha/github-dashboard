@@ -1,8 +1,9 @@
 import { Card } from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import IRepository from '../../data/IRepository';
 
-function RepositoriesCard() {
+function RepositoriesCard({repositories}:{repositories:IRepository[]}) {
   return (
     <Card sx={{ maxWidth: 345 }}>
         <CardContent>

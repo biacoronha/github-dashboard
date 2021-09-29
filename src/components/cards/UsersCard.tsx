@@ -2,8 +2,9 @@ import { Avatar, Card, Divider } from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import IUser from '../../data/IUser';
 
-function UsersCard() {
+function UsersCard({users}:{users:IUser[]}) {
   return (
     <Card sx={{ maxWidth: 345 }}>
         <CardMedia
