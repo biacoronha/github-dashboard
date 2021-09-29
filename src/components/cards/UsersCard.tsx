@@ -17,12 +17,9 @@ function UsersCard({user}:{user:IUser}) {
 
   const profile = UseFetch(user.url);
   const followers = UseFetch(user.followers_url);
-  const repos = UseFetch(user.repos_url);
+  const repos = UseFetch(user.repos_url+"?q=sort:stars&page=1&per_page=1");
 
   console.log("aqui")
-  console.log(user.login)
-  console.log(profile)
-  console.log(followers)
   console.log(repos)
 
 
@@ -40,12 +37,12 @@ function UsersCard({user}:{user:IUser}) {
           <CardContent>
               <Typography gutterBottom variant="h5" component="div">
               {user.login}
-              Email: {profile.email}
+              Email: {profile.email ?? 'No email available'}
               Followers: {followers.length}
               </Typography>
               <Divider variant="middle" />
               <Typography variant="body2" color="text.secondary">
-              more starred repos more one request and sort by stars (repos_url)
+                {repos.length > 0 ? repos[0].name : 'No repos'}
               </Typography>
           </CardContent>
       </Card>
