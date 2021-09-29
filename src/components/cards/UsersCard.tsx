@@ -7,14 +7,6 @@ import UseFetch from '../../helpers/UseFetch';
 
 function UsersCard({user}:{user:IUser}) {
 
-  // const [profile, setProfile] = useState();
-  // const [followers, setFollowers] = useState();
-  // const [repos, setRepos] = useState();
-
-  // setProfile(UseFetch(user.url));
-  // setFollowers(UseFetch(user.followers_url));
-  // setRepos(UseFetch(user.repos_url));
-
   const profile = UseFetch(user.url);
   const followers = UseFetch(user.followers_url);
   const repos = UseFetch(user.repos_url+"?q=sort:stars&page=1&per_page=1");

@@ -9,7 +9,7 @@ function RepositoriesCard({repository}:{repository:IRepository}) {
         <CardContent>
             <Typography gutterBottom variant="h5" component="div">
             {repository.name}
-            {repository.stars}
+            Stars: {repository.stargazers_count}
             </Typography>
             <Typography variant="body2" color="text.secondary">
             {repository.description}
