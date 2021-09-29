@@ -1,7 +1,7 @@
 import { Card } from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import IRepository from '../../data/IRepository';
+import IRepository from '../../helpers/IRepository';
 
 function RepositoriesCard({repository}:{repository:IRepository}) {
   return (

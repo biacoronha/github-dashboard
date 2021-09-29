@@ -1,17 +1,17 @@
-import IUser from "../data/IUser";
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import IUser from "./IUser";
 
-function APIUsersService(props: {setUsers:(users: IUser[]) => void, query:string}) {
-    const {setUsers, query} = props;
+const UseFetch = (url:string) => {
     const [loading, setLoading]: [boolean, (loading: boolean) => void] = useState<boolean>(true);
     const [error, setError]: [string, (error: string) => void] = useState("");
 
+    const [data, setData] = useState<any[]>([]);
     useEffect(() => {
-    axios
-        .get<any>("https://api.github.com/search/users?q="+query, {timeout : 6000})
+        axios
+        .get<any>(url, {timeout : 6000})
         .then(response => {
-            setUsers(response.data.items);
+            setData(response.data.items);
             console.log(response.data.items)
             setLoading(false);
         })
@@ -25,14 +25,9 @@ function APIUsersService(props: {setUsers:(users: IUser[]) => void, query:string
         setError(error);
         setLoading(false);
         });
-    }, []);
+      }, [url]);
+    
+    return data;
+};
 
-    return (
-        <div>
-
-        </div>
-    );
-
-}
-
-export default APIUsersService;
+export default UseFetch;

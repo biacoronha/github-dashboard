@@ -2,7 +2,7 @@ import { Avatar, Card, Divider } from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import IUser from '../../data/IUser';
+import IUser from '../../helpers/IUser';
 
 function UsersCard({user}:{user:IUser}) {
   return (
