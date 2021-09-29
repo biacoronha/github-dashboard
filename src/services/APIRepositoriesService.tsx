@@ -1,4 +1,3 @@
-import IUser from "../data/IUser";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import IRepository from "../data/IRepository";
@@ -10,9 +9,9 @@ function APIRepositoriesService(props: {setRepositories:(repositories: IReposito
 
     useEffect(() => {
     axios
-        .get<IRepository[]>("https://api.github.com/search/repositories?q="+query, {timeout : 6000})
+        .get<any>("https://api.github.com/search/repositories?q="+query, {timeout : 6000})
         .then(response => {
-        setRepositories(response.data);
+        setRepositories(response.data.items);
         setLoading(false);
         })
         .catch(ex => {

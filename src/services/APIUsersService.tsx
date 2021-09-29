@@ -9,10 +9,11 @@ function APIUsersService(props: {setUsers:(users: IUser[]) => void, query:string
 
     useEffect(() => {
     axios
-        .get<IUser[]>("https://api.github.com/search/users?q="+query, {timeout : 6000})
+        .get<any>("https://api.github.com/search/users?q="+query, {timeout : 6000})
         .then(response => {
-        setUsers(response.data);
-        setLoading(false);
+            setUsers(response.data.items);
+            console.log(response.data.items)
+            setLoading(false);
         })
         .catch(ex => {
         const error =

@@ -3,12 +3,14 @@ import APIUsersService from "../../services/APIUsersService";
 import UsersCard from "../cards/UsersCard";
 
 export default function TrendingUsersSection({users,setUsers} : {users:IUser[],setUsers:(users: IUser[]) => void}) {
-    const query = "created:>2021-06-28+sort:followers+type:user&page=1&per_page=3"; 
+    const query = "created:>2021-06-28+sort:followers+type:user&page=1&per_page=3";
+    console.log(users) 
     return (
         <div>
             <h1>Trendings Users</h1>
             <APIUsersService setUsers={setUsers} query={query}/>
-            <UsersCard users={users}/>
+            {users?.map((user, i) => 
+                <UsersCard user={user} key={i}/> )}
         </div>
       );
 }

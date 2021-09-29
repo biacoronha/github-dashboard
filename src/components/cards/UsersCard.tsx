@@ -4,23 +4,24 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import IUser from '../../data/IUser';
 
-function UsersCard({users}:{users:IUser[]}) {
+function UsersCard({user}:{user:IUser}) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, display: 'inline-block', margin: 5}}>
         <CardMedia
             component="img"
             height="140"
-            image="/static/images/cards/contemplative-reptile.jpg"
+            image={user.avatar_url}
             alt="green iguana"
         />
-        <Avatar src={'https://i.pravatar.cc/300'} />
+        <Avatar src={user.avatar_url} />
         <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-            Lorem Ipsum
+            {user.name}
+            email and followers more requests 1 for each and get lenght for the followers one (url and followers_url)
             </Typography>
             <Divider variant="middle" />
             <Typography variant="body2" color="text.secondary">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+            more starred repos more one request and sort by stars (repos_url)
             </Typography>
         </CardContent>
     </Card>
