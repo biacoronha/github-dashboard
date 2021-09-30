@@ -14,14 +14,15 @@ export default function HomePage() {
   const [activeUsers, setActiveUsers]: [IUser[], (activeUsers: IUser[]) => void] = useState(defaultUsers);
   const [trendingUsers, setTrendingUsers]: [IUser[], (trendingUsers: IUser[]) => void] = useState(defaultUsers);
   const [repositories, setRepositories]: [IRepository[], (repositories: IRepository[]) => void] = useState(defaultRepositories);
+  const [search, setSearch] = useState("");
 
   return (
     <div className="HomePage">
-        <Header/>
+        <Header setSearch={setSearch}/>
         <div className="main_content">
-          <TrendingUsersSection trendingUsers={trendingUsers} setTrendingUsers={setTrendingUsers}/>
-          <ActiveUsersSection activeUsers={activeUsers} setActiveUsers={setActiveUsers}/>
-          <RepositoriesSection repositories={repositories} setRepositories={setRepositories}/>
+          <TrendingUsersSection trendingUsers={trendingUsers} setTrendingUsers={setTrendingUsers} search={search}/>
+          <ActiveUsersSection activeUsers={activeUsers} setActiveUsers={setActiveUsers} search={search}/>
+          <RepositoriesSection repositories={repositories} setRepositories={setRepositories} search={search}/>
         </div>
     </div>
   );
