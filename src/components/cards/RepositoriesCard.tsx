@@ -7,15 +7,21 @@ import './Cards.css';
 function RepositoriesCard({repository}:{repository:IRepository}) {
   return (
     <div className="repos-cards">
-      <Card sx={{ maxWidth: 270, maxHeight: 100, display: 'inline-block', margin: 3 }}>
+      <Card sx={{ width: 330, height: 300 }}>
           <CardContent>
+            <div className="card-content">
               <Typography gutterBottom variant="h5" component="div">
-              {repository.name}
-              Stars: {repository.stargazers_count}
+                {repository.name}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
-              {repository.description}
+              <Typography gutterBottom variant="h5" component="div">
+                Stars: {repository.stargazers_count}
               </Typography>
+              <div className="card-description">
+                <Typography variant="body2" color="text.secondary">
+                  {repository.description}
+                </Typography>
+              </div>
+            </div>
           </CardContent>
       </Card>
     </div>

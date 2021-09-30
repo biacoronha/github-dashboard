@@ -19,25 +19,34 @@ function UsersCard({user}:{user:IUser}) {
   return (
     <div className="user-cards" >
        {(user && profile && followers && repos) ? 
-        <Card sx={{ maxWidth: 345}}>
-          <CardMedia
+        <Card sx={{ width: 400, height: 400}}>
+          <CardMedia sx={{filter: "blur(2px)"}}
               component="img"
-              height="140"
+              height="100"
               image={user.avatar_url}
-              alt="green iguana"
+              alt="user avatar"
           />
-          <Avatar src={user.avatar_url} />
+          <div className="card-content">
+          <Avatar src={user.avatar_url} sx={{padding: 0}} />
           <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-              {user.login}
-              Email: {profile.email ?? 'No email available'}
-              Followers: {followers.length}
+          <div className="card-content">
+              <Typography gutterBottom variant="h5" component="div" display="block" sx={{padding: 0}}>
+                {user.login}
+              </Typography>
+              <Typography gutterBottom variant="h6" component="div" display="block" sx={{padding: 0}}>
+                {profile.email ?? 'No email available'}
+              </Typography>
+              <Typography gutterBottom variant="h6" component="div" display="block" sx={{padding: 0}}>
+                {followers.length} followers
               </Typography>
               <Divider variant="middle" />
+              {/* criar component pra colocar o repo */}
               <Typography variant="body2" color="text.secondary">
                 {repos.length > 0 ? repos[0].name : 'No repos'}
               </Typography>
+            </div>
           </CardContent>
+          </div>
       </Card>
     : null}
   </div>

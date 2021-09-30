@@ -3,12 +3,28 @@
     flex-wrap: wrap;
     align-content: flex-start;
     padding-top: 0;
+    flex-direction: 'column';
+    align-items: 'center';
+    width: 300px !important;
 }
 
 .user-cards + .user-cards {
-    margin-left: 232px;
+    margin-left: 100px;
 }
 
 .repos-cards + .repos-cards {
-    margin-left: 70px;
+    margin-left: 25px;
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 0 !important;
+    top: 0 ;
+}
+
+.card-description {
+    width: 80%;
+    height: 60%;
 }
