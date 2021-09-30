@@ -9,23 +9,13 @@ export default function ActiveUsersSection({activeUsers,setActiveUsers} : {activ
 
     setActiveUsers(UseFetch(url));
     
-    //console.log(activeUsers)
-
     return (
         <div>
             <h1>Most Active Users</h1>
-            {/* <APIUsersService setUsers={setUsers} query={query}/> */}
-            {/* <Grid
-                container
-                spacing={2}
-                direction="row"
-                justify="flex-start"
-                alignItems="flex-start"
-            > */}
-            {activeUsers?.map((user, i) => 
-                //fazer as requisições aqui?
-                <UsersCard user={user} key={i}/> )}
-            {/* </Grid> */}
+            <div className="section"> 
+                {activeUsers?.map((user, i) => 
+                    <UsersCard user={user} key={i}/> )}
+            </div>
         </div>
       );
 

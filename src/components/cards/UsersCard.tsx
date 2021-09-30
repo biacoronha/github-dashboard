@@ -4,6 +4,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import IUser from '../../helpers/IUser';
 import UseFetch from '../../helpers/UseFetch';
+import './Cards.css';
 
 function UsersCard({user}:{user:IUser}) {
 
@@ -16,9 +17,9 @@ function UsersCard({user}:{user:IUser}) {
 
 
   return (
-    <div>
-      {(user && profile && followers && repos) ? 
-        <Card sx={{ maxWidth: 345, display: 'inline-block', margin: 5}}>
+    <div className="user-cards" >
+       {(user && profile && followers && repos) ? 
+        <Card sx={{ maxWidth: 345}}>
           <CardMedia
               component="img"
               height="140"

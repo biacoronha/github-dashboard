@@ -11,9 +11,10 @@ export default function TrendingUsersSection({trendingUsers,setTrendingUsers} : 
     return (
         <div>
             <h1>Trendings Users</h1>
-            {/* <APIUsersService setUsers={setUsers} query={query}/> */}
-            {trendingUsers?.map((user, i) => 
-                <UsersCard user={user} key={i}/> )}
+            <div className="section"> 
+                {trendingUsers?.map((user, i) => 
+                    <UsersCard user={user} key={i}/> )}
+            </div>
         </div>
       );
 }

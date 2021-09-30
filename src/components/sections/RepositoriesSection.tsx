@@ -12,9 +12,10 @@ export default function RepositoriesSection({repositories,setRepositories} : {re
     return (
         <div>
             <h1>Top Repositories</h1>
-            {/* <APIRepositoriesService setRepositories={setRepositories} query={query}/> */}
-            {repositories?.map((repository, i) => 
-                <RepositoriesCard repository={repository}/> )};
+            <div className="section"> 
+                {repositories?.map((repository, i) => 
+                    <RepositoriesCard repository={repository}/> )};
+            </div>
         </div>
       );
 }

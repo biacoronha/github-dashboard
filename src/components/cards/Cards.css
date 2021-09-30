@@ -1,0 +1,14 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding-top: 0;
+}
+
+.user-cards + .user-cards {
+    margin-left: 232px;
+}
+
+.repos-cards + .repos-cards {
+    margin-left: 70px;
+}
