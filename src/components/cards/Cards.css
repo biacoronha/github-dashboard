@@ -1,12 +1,7 @@
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    padding-top: 0;
-    flex-direction: 'column';
-    align-items: 'center';
-    width: 300px !important;
-}
+/* .MuiCard-root:hover .MuiCardMedia-media {
+    height: inherit;
+    filter: blur(8px) grayscale(65%)
+} */
 
 .user-cards + .user-cards {
     margin-left: 100px;

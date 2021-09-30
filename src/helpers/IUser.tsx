@@ -9,5 +9,6 @@ export default interface IUser {
     repos_url: string;
     profile: any;
     repos: any; 
+    html_url:string;
   }
   
