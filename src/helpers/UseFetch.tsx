@@ -1,13 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { isConditionalExpression } from "typescript";
+import * as Constants from "../helpers/Constants";
 
-export default function UseFetch(url:string)  {
+export default function UseFetch(query:string)  {
     const ls = require('localstorage-ttl');
 
     const [loading, setLoading]: [boolean, (loading: boolean) => void] = useState<boolean>(true);
     const [error, setError]: [string, (error: string) => void] = useState("");
     const [data, setData] = useState<any>();
+
+    const url = query.startsWith("http") ? query : Constants.BASE_URL + query;
    
     useEffect(() => {
         if(ls.get(url)) {

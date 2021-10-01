@@ -1,16 +1,17 @@
-import { Avatar, Button, Card, CardActionArea, createMuiTheme, Divider } from '@mui/material';
+import { Avatar, Card, CardActionArea, Divider } from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import IUser from '../../helpers/IUser';
 import UseFetch from '../../helpers/UseFetch';
+import * as Constants from '../../helpers/Constants';
 import './Cards.css';
 
 export default function UsersCard({user}:{user:IUser}) {
 
   const profile = UseFetch(user.url);
   const followers = UseFetch(user.followers_url);
-  const repos = UseFetch(user.repos_url+"?q=sort:stars&page=1&per_page=1");
+  const repos = UseFetch(user.repos_url+Constants.SORT_AND_PAGINAATION_FOR_USER_REPO);
 
   return (
     <div className="user-cards" >

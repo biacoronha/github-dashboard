@@ -1,17 +1,14 @@
 import IUser from "../../helpers/IUser";
 import UseFetch from "../../helpers/UseFetch";
 import UsersCard from "../cards/UsersCard";
+import * as Constants from "../../helpers/Constants";
 import './Sections.css'
 
 export default function ActiveUsersSection({activeUsers,setActiveUsers,search} : {activeUsers:IUser[],setActiveUsers:(activeUsers: IUser[]) => void, search:any}) {
-    const baseUrl = "https://api.github.com/search/";
-    const entity = "users";
-    const query = "?q=created:>2021-06-28+sort:repositories+type:user"; 
-    const searchQuery = `+${search}+in:login`;
-    const filter = "&page=1&per_page=3";
-    console.log(baseUrl+entity+query+searchQuery+filter)
+    const searchQuery = `+${search}+${Constants.SEARCH_TERM.FOR_USERS}`;
+    const query = Constants.ENTITY.USER + Constants.QUERY.ACTIVE_USERS + searchQuery + Constants.PAGINATION.FOR_USERS;
 
-    setActiveUsers(UseFetch(baseUrl+entity+query+searchQuery+filter));
+    setActiveUsers(UseFetch(query));
     
     return (
         <div>

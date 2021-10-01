@@ -1,16 +1,13 @@
 import IUser from "../../helpers/IUser";
 import UseFetch from "../../helpers/UseFetch";
 import UsersCard from "../cards/UsersCard";
+import * as Constants from "../../helpers/Constants";
 
 export default function TrendingUsersSection({trendingUsers,setTrendingUsers, search} : {trendingUsers:IUser[],setTrendingUsers:(trendingUsers: IUser[]) => void, search:any}) {
-    const baseUrl = "https://api.github.com/search/";
-    const entity = "users";
-    const query = "?q=created:>2021-06-28+sort:followers+type:user"; 
-    const searchQuery = `+${search}+in:login`;
-    const filter = "&page=1&per_page=3";
+    const searchQuery = `+${search}+${Constants.SEARCH_TERM.FOR_USERS}`;
+    const query = Constants.ENTITY.USER + Constants.QUERY.TRENDING_USERS + searchQuery + Constants.PAGINATION.FOR_USERS;
 
-
-    setTrendingUsers(UseFetch(baseUrl+entity+query+searchQuery+filter));
+    setTrendingUsers(UseFetch(query));
 
     return (
         <div>

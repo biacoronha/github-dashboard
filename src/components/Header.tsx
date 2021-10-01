@@ -2,6 +2,7 @@ import { AppBar, Toolbar } from '@mui/material';
 import SearchBar from 'material-ui-search-bar';
 import { useState } from 'react';
 import './Header.css';
+import mainLogo  from '../assets/uphill_logo.png';
 
 export default function Header({setSearch} : {setSearch:any}) {
     const [value, setValue] = useState('');
@@ -19,7 +20,9 @@ export default function Header({setSearch} : {setSearch:any}) {
           }}
         />  
 
-            <Toolbar className='logo'>UPHILL</Toolbar>
+            <Toolbar className="toolbar">
+              <img src={mainLogo} alt="logo" className='logo'/>
+            </Toolbar>
         </AppBar>
   </header>
 
