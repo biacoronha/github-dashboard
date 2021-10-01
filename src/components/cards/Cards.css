@@ -1,8 +1,3 @@
-/* .MuiCard-root:hover .MuiCardMedia-media {
-    height: inherit;
-    filter: blur(8px) grayscale(65%)
-} */
-
 .user-cards + .user-cards {
     margin-left: 100px;
 }

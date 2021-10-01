@@ -38,7 +38,6 @@ export default function UsersCard({user}:{user:IUser}) {
                 {followers.length} followers
               </Typography>
               <Divider variant="middle" />
-              {/* criar component pra colocar o repo */}
               <Typography variant="body2" color="text.secondary">
                 {repos.length > 0 ? repos[0].name : 'No repos'}
               </Typography>
