@@ -1,3 +1,7 @@
+.MuiDivider-root {
+    width: 300px;
+}
+
 .user-cards + .user-cards {
     margin-left: 100px;
 }
@@ -17,4 +21,8 @@
 .card-description {
     width: 80%;
     height: 60%;
+}
+
+.popular_repo {
+    padding: 20px;
 }

@@ -16,11 +16,11 @@ export default function UsersCard({user}:{user:IUser}) {
   return (
     <div className="user-cards" >
        {(user && profile && followers && repos) ? 
-        <Card sx={{ width: 400, height: 400}}>
-          <CardActionArea href={user.html_url} sx={{width: 'inherit', height: 'inherit', display: 'flex', flexWrap: 'wrap'}}>
+        <Card sx={{ width: 400, height: 420, padding: 0}}>
+          <CardActionArea href={user.html_url} sx={{width: 400, height: 400, display: 'flex', flexWrap: 'wrap'}}>
             <CardMedia sx={{filter: "blur(2px)"}}
                 component="img"
-                height="100"
+                height="173"
                 image={user.avatar_url}
                 alt="user avatar"
             />
@@ -38,8 +38,8 @@ export default function UsersCard({user}:{user:IUser}) {
                 {followers.length} followers
               </Typography>
               <Divider variant="middle" />
-              <Typography variant="body2" color="text.secondary">
-                {repos.length > 0 ? repos[0].name : 'No repos'}
+              <Typography variant="body1" color="text.secondary" className="popular_repo">
+                {repos.length > 0 ? "Most Popular Repository:" + repos[0].name : 'No repos'}
               </Typography>
             </div>
             </CardContent>
