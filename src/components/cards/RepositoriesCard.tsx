@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import IRepository from '../../helpers/IRepository';
 import './Cards.css';
 
-function RepositoriesCard({repository}:{repository:IRepository}) {
+export default function RepositoriesCard({repository}:{repository:IRepository}) {
   return (
     <div className="repos-cards">
       <Card sx={{ width: 330, height: 300 }}>
@@ -27,5 +27,3 @@ function RepositoriesCard({repository}:{repository:IRepository}) {
     </div>
   );
 }
-
-export default RepositoriesCard;
