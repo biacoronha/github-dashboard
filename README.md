@@ -1,46 +1,37 @@
-# Getting Started with Create React App
+# GitHub-powered Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was developed using React, Typescipt and elements from Material UI
 
-## Available Scripts
+## Instructions to Run
 
-In the project directory, you can run:
+To run this project, run the following command in the root folder of the application:
+```
+npm start
+```
 
-### `npm start`
+## Important Information
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I had some difficulties understanding the query structure of the GitHub API and, because of that, I'm not sure the results for the repositories are correct. They are different than when I searched on the GitHub interface. The users, however, appear to be correct.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Since I'm using this API unauthorized in my project, there is a limit of requests per hour and, because of that, I decided to cache the results.
+I'm saving the queries results in the localStorage with a TTL of 1 hour. That way, if the query has already beem made in the last hour, the request is not going to be send and the application will get the result from the localStorage.
 
-### `npm test`
+Initially, my search bar was going to be dynamical, the searches were going to happen in real time. However, because of the limit of requests, I decided to only send the search request to the GitHub API when the user confirms the search pressing Enter on the keyboard.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Because of the time that it took me to fully understand how to implement the functionalities, I didn't have time to make the interface fully following the prototypes. So I decided to try and show the same information and have the same functionality of redirect to the users page even if it doesn't look the same.
+In the end, the cards look very different from what I intended but they have all the information asked and when the user's card is clicked it redirect to the user's GitHub profile. However, the appearance doesn't change on hover, only a small change in color to indicate there is a possible action and the card is clickable.
 
-### `npm run build`
+## Next Steps
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I made a list of things I wanted to accomplish in this project but, as previously mentioned, I couldn't do it all. But I plan to later implement those things so I can have this Dashboard with all the information been presented the way it was supposed to.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The next steps on my list are:
+ - Return an error modal when one of the requests go wrong (now it just doesn't return anything)
+ - Ajust the visuals of the cards (mainly css related)
+ - Develop tests for all the components and functionalities 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Conclusion
 
-### `npm run eject`
+Even with the problems I mentioned, I thought this project was a lot of fun to develop and I learned a lot.
+I improved my use of Hooks, understood better how typescript works and used the Material UI library for the first time, discovering that there is a lot of nice and useful components. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
